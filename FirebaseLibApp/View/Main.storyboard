@@ -1963,7 +1963,7 @@ of this review</string>
                                         </state>
                                         <connections>
                                             <action selector="AddTagButton:" destination="7aA-2p-y1w" eventType="touchUpInside" id="qoB-CC-M8a"/>
-                                            <action selector="postButton:" destination="q6M-bd-UfW" eventType="touchUpInside" id="pit-9i-XGc"/>
+                                            <action selector="postButton:" destination="q6M-bd-UfW" eventType="touchUpInside" id="zAI-Dp-mrO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHG-DE-jNn">
@@ -1978,7 +1978,7 @@ of this review</string>
                                         </state>
                                         <connections>
                                             <action selector="AddTagButton:" destination="7aA-2p-y1w" eventType="touchUpInside" id="YWh-OE-ElK"/>
-                                            <action selector="postButton:" destination="q6M-bd-UfW" eventType="touchUpInside" id="ZvI-cB-fsv"/>
+                                            <action selector="editButton:" destination="q6M-bd-UfW" eventType="touchUpInside" id="S46-a9-mtW"/>
                                         </connections>
                                     </button>
                                 </subviews>

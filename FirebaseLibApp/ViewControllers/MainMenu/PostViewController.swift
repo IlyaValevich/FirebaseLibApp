@@ -200,9 +200,11 @@ class PostViewController:UIViewController {
     
     @IBAction func editButton(_ sender: Any) {
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = NewPostViewController.makeUserProfileViewController(post:self.post)
+        vc.postController = PostController()
         
-        
-        
+        self.present(vc, animated: true, completion: nil)
         
     }
     

@@ -30,22 +30,22 @@ class NewPostViewController:UIViewController, UITextViewDelegate, UITextFieldDel
     
     @IBOutlet weak var tapToChangeButton: UIButton!
     @IBOutlet weak var postButton: UIButton!
-    
+    var post:Post? = nil
     var tags:[String]!
     var imagePicker: ImagePicker!
     var firstUpdate = true
     var activityView:UIActivityIndicatorView! = UIActivityIndicatorView()
     
     var modelController: TagController! = TagController()
+    var postController: PostController! = PostController()
     
     
-    
-    static func makeUserProfileViewController(user: UserProfile) ->  UserProfileViewController {
+    static func makeUserProfileViewController(post: Post) ->  NewPostViewController {
         
-        let newViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserProfileViewController") as! UserProfileViewController
+        let newViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewPostViewController") as! NewPostViewController
         
         
-        newViewController.user = user
+        newViewController.post = post
         
         return newViewController
     }
@@ -108,6 +108,30 @@ class NewPostViewController:UIViewController, UITextViewDelegate, UITextFieldDel
         view.addSubview(activityView)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tap(gesture:)))
         self.view.addGestureRecognizer(tapGesture)
+        self.post = postController.postModel
+        
+        if(self.post != nil){
+            
+            tagsField.addTags(post!.tags)
+            
+        
+            
+            textView.text = post?.postText
+            bookName.text = post?.postBookName
+            bookAuthorName.text = post?.postBookAuthor
+            authorVotes.rating = post!.postAuthorVotes
+            postImageView.image = nil
+            
+            ImageService.getImage(withURL: post!.postImageURL) { image, url in
+                guard let _post = self.post else { return }
+                if _post.postImageURL.absoluteString == url.absoluteString {
+                    self.postImageView.image = image
+                } else {
+                    print("Not the right image")
+                }
+                
+            }
+        }
         
     }
     @IBAction func showImagePicker(_ sender: UIButton) {
