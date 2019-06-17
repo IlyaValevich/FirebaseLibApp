@@ -1,0 +1,6 @@
+framework module Pods_FirebaseLibAppUITests {
+  umbrella header "Pods-FirebaseLibAppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
