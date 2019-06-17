@@ -16,27 +16,16 @@ class SearchPostTableViewController:  UITableViewController{
     var searchedPostList = [Post]()
     var searching = false
     override func viewDidLoad() {
-        print("Feed")
+       
         super.viewDidLoad()
         
-        DataService.dataService.POST_REF.observeSingleEvent(of: .value, with: { snapshot in
-            var tempPosts = [Post]()
-            
-           
-            for child in snapshot.children {
-                if let childSnapshot = child as? DataSnapshot,
-                    let data = childSnapshot.value as? [String:Any],
-                    let post = Post.parse(childSnapshot.key, data){
-
-                    tempPosts.insert(post, at: 0)
-                }
+        loadPost{ success in
+            if success{
+              
+            self.tableView.reloadData()
+                
             }
-            
-            self.postList.insert(contentsOf: tempPosts, at: 0)
-            
-    
-            
-        })
+        }
         self.tableView.reloadData()
     }
     
@@ -64,6 +53,27 @@ class SearchPostTableViewController:  UITableViewController{
                 return cell
             }
     }
+    func loadPost(completion: @escaping (Bool) -> ()){
+        //var usersAppreciated:[String:Double] = [:]
+       Database.database().reference().child("posts").observeSingleEvent(of: .value, with: { snapshot in
+            var tempPosts = [Post]()
+        
+            for child in snapshot.children {
+                if let childSnapshot = child as? DataSnapshot,
+                    let data = childSnapshot.value as? [String:Any],
+                    let post = Post.parse(childSnapshot.key, data){
+                    
+                    tempPosts.insert(post, at: 0)
+                }
+            }
+            
+            self.postList.insert(contentsOf: tempPosts, at: 0)
+            completion(true)
+            
+            
+        })
+    }
+        
 }
 extension SearchPostTableViewController: UISearchBarDelegate {
     
