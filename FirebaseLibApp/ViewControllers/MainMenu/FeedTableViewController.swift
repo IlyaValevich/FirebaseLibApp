@@ -86,12 +86,12 @@ class FeedTableViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         
-        let newPostButton = UIButton(frame: CGRect(x: self.view.frame.size.width - 60, y: self.view.frame.size.height - 110, width: 50, height: 50))
-        newPostButton.backgroundColor = .green
+        let newPostButton = UIButton(frame: CGRect(x: self.view.frame.size.width - 60, y: self.view.frame.size.height - 140, width: 50, height: 50))
+       // newPostButton.backgroundImage(for: <#T##UIControl.State#>)
         newPostButton.layer.cornerRadius = newPostButton.bounds.height / 2
         newPostButton.clipsToBounds = true
         //newPostButton.setTitle("", for: .normal)
-        let image = UIImage(named: "newPostIcon") as! UIImage
+        let image = UIImage(named: "addNewPostIcon") as! UIImage
         newPostButton.setBackgroundImage(image, for: UIControl.State.normal)
         newPostButton.addTarget(self, action: #selector(newPostAction), for: .touchUpInside)
         self.view.addSubview(newPostButton)

@@ -36,6 +36,8 @@ class PostViewController:UIViewController {
     
     @IBOutlet weak var rateButton: UIButton!
     
+    @IBOutlet weak var editButton: UIButton!
+    
     @IBOutlet weak var textLabel: UILabel!
     
     var modelController: PostController!
@@ -100,7 +102,7 @@ class PostViewController:UIViewController {
                 queue.async {
                     DispatchQueue.main.sync { // there's no deadlock
                         
-                        //let tag = Tag(id: i, text: dictionary!["text"] as! String)
+              
                         self.tagsField.addTag(dictionary!["text"] as! String)
                     }
                     print(tagList)
@@ -133,9 +135,14 @@ class PostViewController:UIViewController {
         tagsField.keyboardAppearance = .dark
         
         if post.author.uid == Auth.auth().currentUser!.uid{
-            self.rateButton.setTitle("Edit", for: .normal)
+            self.rateButton.isHidden = true
+            self.rateButton.isEnabled = false
+            
             self.usersVotes.updateOnTouch = false
             
+        }else{
+            self.editButton.isHidden = true
+            self.editButton.isEnabled = false
         }
         
     }

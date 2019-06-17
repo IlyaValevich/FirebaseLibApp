@@ -117,6 +117,7 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
     
     func loadSubscribedUsers(completion: @escaping (Bool) -> ()){
         //var usersAppreciated:[String:Double] = [:]
+        
         let subscribedUsersRef = Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("subscribedUsers")
         
         

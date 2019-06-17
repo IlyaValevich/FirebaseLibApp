@@ -22,11 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let quoteVC = window?.rootViewController as? UserProfileViewController {
             quoteVC.modelController = UserController()
         }
-
+        if(Auth.auth().currentUser != nil){
         notifications.notificationCenter.delegate = notifications
         notifications.userRequest()
         
           self.notifications.scheduleNotification(notificationType: "hi")
+        }
         openViewController()
         
         
