@@ -108,13 +108,11 @@ class NewPostViewController:UIViewController, UITextViewDelegate, UITextFieldDel
         view.addSubview(activityView)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tap(gesture:)))
         self.view.addGestureRecognizer(tapGesture)
-        self.post = postController.postModel
+       // self.post = postController.postModel
         
         if(self.post != nil){
             
             tagsField.addTags(post!.tags)
-            
-        
             
             textView.text = post?.postText
             bookName.text = post?.postBookName
@@ -131,6 +129,7 @@ class NewPostViewController:UIViewController, UITextViewDelegate, UITextFieldDel
                 }
                 
             }
+            self.view.reloadInputViews()
         }
         
     }
