@@ -106,7 +106,16 @@ extension SearchPostTableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if (searchText.count > 0){
             searchedPostList = postList.filter({$0.author.name.lowercased().prefix(searchText.count) == searchText.lowercased() || $0.author.surname.lowercased().prefix(searchText.count) == searchText.lowercased()})
-            //print(searchedPostList)
+        
+
+            for i in postList{
+                for j in i.tags{
+                    if j.lowercased().prefix(searchText.count) == searchText.lowercased() {
+                      searchedPostList.append(i)
+                    }
+                }
+            }
+            
             searching = true
             tableView.reloadData()
         }
