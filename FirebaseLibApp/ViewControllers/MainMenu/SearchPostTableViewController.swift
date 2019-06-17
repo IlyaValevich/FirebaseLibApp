@@ -18,12 +18,17 @@ class SearchPostTableViewController:  UITableViewController{
     override func viewDidLoad() {
        
         super.viewDidLoad()
+        let cellNib = UINib(nibName: "PostCellTableViewCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "postCell")
+        tableView.register(LoadingCell.self, forCellReuseIdentifier: "loadingCell")
+        tableView.backgroundColor = UIColor(white: 0.90,alpha:1.0)
         
-        loadPost{ success in
+        loadNewPost{ success in
             if success{
-              
+                self.searchedPostList = self.postList
             self.tableView.reloadData()
                 
+              
             }
         }
         self.tableView.reloadData()
@@ -53,27 +58,28 @@ class SearchPostTableViewController:  UITableViewController{
                 return cell
             }
     }
-    func loadPost(completion: @escaping (Bool) -> ()){
-        //var usersAppreciated:[String:Double] = [:]
-       Database.database().reference().child("posts").observeSingleEvent(of: .value, with: { snapshot in
-            var tempPosts = [Post]()
+    func loadNewPost(completion: @escaping (Bool) -> ()){
         
-            for child in snapshot.children {
-                if let childSnapshot = child as? DataSnapshot,
-                    let data = childSnapshot.value as? [String:Any],
-                    let post = Post.parse(childSnapshot.key, data){
+        
+        let postsRef = Database.database().reference().child("posts")
+        
+        self.postList = []
+        
+        postsRef.observe(DataEventType.value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [DataSnapshot]{
+                for snap in snapshots {
                     
-                    tempPosts.insert(post, at: 0)
+                    if let postDictionary = snap.value as? Dictionary<String, AnyObject> {
+                        let id = snap.key
+                        let dateNow = Calendar.current.date(byAdding: .day, value: -7, to: Date())
+                        let post =  Post.parse(id, postDictionary)
+                        self.postList.insert(post!, at: 0)
+                    }
                 }
+                completion(true)
             }
-            
-            self.postList.insert(contentsOf: tempPosts, at: 0)
-            completion(true)
-            
-            
         })
     }
-        
 }
 extension SearchPostTableViewController: UISearchBarDelegate {
     
