@@ -155,20 +155,7 @@ class PostViewController:UIViewController {
     
     @IBAction func postButton(_ sender: Any) {
         
-//        var usersAppreciated:[String:Double] = [:]
-//        let postRef = Database.database().reference().child("posts").child(self.post.id)
-//        let usersAppreciatedRef = Database.database().reference().child("posts").child(self.post.id).child("usersAppreciated")
-//
-//        usersAppreciatedRef.observeSingleEvent(of: .value, with: { snapshot in
-//            if let snapshots = snapshot.children.allObjects as? [DataSnapshot]{
-//                for snap in snapshots {
-//                    usersAppreciated[snap.key] =  snap.value as! Double
-//                    print(usersAppreciated)
-//                }
-//
-//
-//            }
-//        })
+
        
         loadAppreciatingUsers{ success in
             if success{
@@ -210,6 +197,14 @@ class PostViewController:UIViewController {
         }
         
 }
+    
+    @IBAction func editButton(_ sender: Any) {
+        
+        
+        
+        
+        
+    }
     
     @IBAction func openUserProfile(_ sender: Any) {
         let user = self.post.author

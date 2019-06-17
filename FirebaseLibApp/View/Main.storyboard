@@ -724,7 +724,7 @@
                                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addTagsAction:" destination="hAa-PZ-Q1k" eventType="touchUpInside" id="jnR-9n-ZHt"/>
+                                                    <action selector="addTagsAction:" destination="hAa-PZ-Q1k" eventType="touchUpInside" id="kkx-7U-AvJ"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYu-CT-viD">
@@ -794,7 +794,8 @@
                                                             <color key="titleColor" red="0.607329546" green="1" blue="0.77507551190000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="cancelAction:" destination="hAa-PZ-Q1k" eventType="touchUpInside" id="2Au-dw-eJk"/>
+                                                            <action selector="cancelAction:" destination="hAa-PZ-Q1k" eventType="touchUpInside" id="2FH-a0-9Vk"/>
+                                                            <action selector="handleCancelButton" destination="hAa-PZ-Q1k" eventType="touchUpInside" id="NYS-EG-aDp"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yp8-WO-5Js">
@@ -807,6 +808,9 @@
                                                         <state key="normal" title="Post" backgroundImage="NewButton">
                                                             <color key="titleColor" red="0.607329546" green="1" blue="0.77507551190000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="handlePostButton" destination="hAa-PZ-Q1k" eventType="touchUpInside" id="Bwj-26-hh5"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.41590547560000002" green="0.66831868890000001" blue="0.77256542439999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1623,7 +1627,6 @@
                                                     <color key="titleColor" red="0.607329546" green="1" blue="0.77507551190000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="cancelAction:" destination="hAa-PZ-Q1k" eventType="touchUpInside" id="66U-sc-92X"/>
                                                     <action selector="handleCancelButton" destination="7aA-2p-y1w" eventType="touchUpInside" id="3dM-An-Z1X"/>
                                                 </connections>
                                             </button>
@@ -1944,7 +1947,6 @@ of this review</string>
                                             <color key="titleColor" red="0.607329546" green="1" blue="0.77507551190000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="cancelAction:" destination="hAa-PZ-Q1k" eventType="touchUpInside" id="h6i-u7-XLh"/>
                                             <action selector="cancelButton:" destination="q6M-bd-UfW" eventType="touchUpInside" id="wUz-8H-Aab"/>
                                             <action selector="handleCancelButton" destination="7aA-2p-y1w" eventType="touchUpInside" id="MkW-Ab-Npj"/>
                                         </connections>

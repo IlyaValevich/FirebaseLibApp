@@ -38,10 +38,17 @@ class NewPostViewController:UIViewController, UITextViewDelegate, UITextFieldDel
     
     var modelController: TagController! = TagController()
     
-    @IBAction func showImagePicker(_ sender: UIButton) {
-        self.imagePicker.present(from: sender)
-    }
     
+    
+    static func makeUserProfileViewController(user: UserProfile) ->  UserProfileViewController {
+        
+        let newViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserProfileViewController") as! UserProfileViewController
+        
+        
+        newViewController.user = user
+        
+        return newViewController
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,7 +110,9 @@ class NewPostViewController:UIViewController, UITextViewDelegate, UITextFieldDel
         self.view.addGestureRecognizer(tapGesture)
         
     }
-    
+    @IBAction func showImagePicker(_ sender: UIButton) {
+        self.imagePicker.present(from: sender)
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tags = []
