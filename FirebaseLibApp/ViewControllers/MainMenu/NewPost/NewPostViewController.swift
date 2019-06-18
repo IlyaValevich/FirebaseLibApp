@@ -149,6 +149,7 @@ class NewPostViewController:UIViewController, UITextViewDelegate, UITextFieldDel
         guard let userProfile = UserService.currentUserProfile else
         { return }
         
+        self.activityView.startAnimating()
         postButton.isEnabled = true
         
         var tagsId:[String] = []
@@ -204,6 +205,7 @@ class NewPostViewController:UIViewController, UITextViewDelegate, UITextFieldDel
                 
                 postRef.setValue(postObject, withCompletionBlock: { error, ref in
                     if error == nil {
+                        self.activityView.stopAnimating()
                         self.delegate?.didUploadPost(withID: ref.key!)
                         self.dismiss(animated: true, completion: nil)
                     }

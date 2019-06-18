@@ -93,13 +93,13 @@
                                                 </constraints>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ls7-uA-Hgz">
-                                                <rect key="frame" x="67" y="143" width="281" height="182"/>
+                                                <rect key="frame" x="199.66666666666666" y="143" width="16" height="182"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="182" id="y44-gg-50W"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Welcome to Firebase Lib App" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXC-Xx-peI">
-                                                <rect key="frame" x="38" y="333" width="338" height="33"/>
+                                                <rect key="frame" x="-94.666666666666686" y="333" width="603.33333333333337" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="33" id="jal-cJ-3sY"/>
                                                 </constraints>
@@ -448,7 +448,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="zxT-8B-pxY">
+                        <searchBar key="tableHeaderView" contentMode="redraw" misplaced="YES" id="zxT-8B-pxY">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -535,7 +535,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIF-TN-Jg6">
-                                                                    <rect key="frame" x="20" y="22" width="335" height="0.0"/>
+                                                                    <rect key="frame" x="20" y="22" width="374" height="0.0"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -761,7 +761,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <view contentMode="scaleAspectFit" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Xc-ju-Vek" customClass="TagListView" customModule="FirebaseLibApp" customModuleProvider="target">
-                                                <rect key="frame" x="6" y="382" width="358" height="25"/>
+                                                <rect key="frame" x="6" y="382" width="358" height="36"/>
                                                 <color key="backgroundColor" red="0.452598691" green="0.75496208669999998" blue="0.62743705510000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xmo-iG-aii">
@@ -1104,7 +1104,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="W4G-KB-Cj1">
+                        <searchBar key="tableHeaderView" contentMode="redraw" misplaced="YES" showsCancelButton="YES" id="W4G-KB-Cj1">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1403,7 +1403,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" red="0.5369368967" green="0.86131923980000002" blue="1" alpha="0.50931112420000002" colorSpace="custom" customColorSpace="displayP3"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="Was-7Y-zU8">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="Was-7Y-zU8">
                             <rect key="frame" x="0.0" y="0.0" width="240" height="109"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -1588,7 +1588,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FP7-Sp-Zf8">
-                                                                    <rect key="frame" x="325" y="4" width="35" height="35"/>
+                                                                    <rect key="frame" x="364" y="4" width="35" height="35"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="35" id="Qgj-dq-x99"/>
                                                                         <constraint firstAttribute="width" constant="35" id="bYv-NW-FoF"/>
@@ -2054,7 +2054,7 @@ of this review</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="pZY-6T-ka0">
+                        <searchBar key="tableHeaderView" contentMode="redraw" misplaced="YES" id="pZY-6T-ka0">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
