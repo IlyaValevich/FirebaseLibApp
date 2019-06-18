@@ -226,7 +226,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @objc func keyboardWillShow(notification:NSNotification) {
         let userInfo = notification.userInfo
         let keyboardFrameSize = (userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        scrollView.contentOffset = CGPoint(x: 0, y: keyboardFrameSize.height - 100)
+        scrollView.contentOffset = CGPoint(x: 0, y: keyboardFrameSize.height - 200)
         
     }
     
